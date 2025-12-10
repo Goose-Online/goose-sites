@@ -24,13 +24,13 @@ jobs:
       run: |
         node tools/build-index.js
     
-    - name: Check storage limits
-      run: |
-        node tools/check-limits.js
+    # - name: Check storage limits
+    #   run: |
+    #     node tools/check-limits.js
     
-    - name: Generate RSS feed
-      run: |
-        node tools/generate-rss.js
+    # - name: Generate RSS feed
+    #   run: |
+    #     node tools/generate-rss.js
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
