@@ -1,0 +1,39 @@
+name: Deploy Goose Sites
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Build site index
+      run: |
+        node tools/build-index.js
+    
+    - name: Check storage limits
+      run: |
+        node tools/check-limits.js
+    
+    - name: Generate RSS feed
+      run: |
+        node tools/generate-rss.js
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
