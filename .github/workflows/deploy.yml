@@ -24,9 +24,9 @@ jobs:
       run: |
         node tools/build-index.js
     
-    # - name: Check storage limits
-    #   run: |
-    #     node tools/check-limits.js
+    - name: Check storage limits
+      run: |
+        node tools/check-limits.js
     
     # - name: Generate RSS feed
     #   run: |
