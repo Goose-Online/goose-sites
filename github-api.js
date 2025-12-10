@@ -1,6 +1,6 @@
 // API для работы с GitHub репозиторием гнёзд
 class GitHubNestsAPI {
-    constructor(token, repo = 'goose-online/goose-sites') {
+    constructor(token, repo = 'Goose-Online/goose-sites') {
         this.token = token;
         this.repo = repo;
         this.baseUrl = 'https://api.github.com';
