@@ -1,0 +1,10 @@
+{
+  "owner": "username",
+  "title": "Название сайта",
+  "description": "Описание",
+  "biom": "swamp",
+  "created": "2024-01-01",
+  "storageLimit": 50, // МБ
+  "usedStorage": 0.5, // МБ
+  "visibility": "public"
+}
